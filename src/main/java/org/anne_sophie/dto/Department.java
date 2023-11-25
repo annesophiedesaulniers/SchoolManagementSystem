@@ -1,5 +1,5 @@
 package org.anne_sophie.dto;
 
-public class Course {
+public class Department {
 
 }
