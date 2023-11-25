@@ -8,7 +8,7 @@ public class Student {
     private Course courses;
     private String id;
     private static int nextId = 1;
-    private Departement departement;
+    private Department department;
 
     public Student(String fname, String lname, Department department) {
 
