@@ -1,2 +1,2 @@
 # SchoolManagementSystem
-This is a school management system where we have a student class, a teacher class, a department class and a course class. Each department, student, teacher and course has an id. 
+This is a school management system where we have school management system class, a student class, a teacher class, a department class and a course class. Each department, student, teacher and course has an id. The id increases each time. We are able to add and display new departments, students, teachers and courses.

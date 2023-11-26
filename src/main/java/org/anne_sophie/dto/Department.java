@@ -1,9 +1,15 @@
 package org.anne_sophie.dto;
 
 import lombok.ToString;
+
+/**
+ * Department
+ *
+ * @author Anne-Sophie Desaulniers
+ */
 @ToString
 public class Department {
-    private String id;
+    private String departmentId;
     private static int nextId = 1;
     private String departmentName;
     

@@ -1,10 +1,16 @@
 package org.anne_sophie.dto;
 
 import lombok.ToString;
+
+/**
+ * Course
+ *
+ * @author Anne-Sophie Desaulniers
+ */
 @ToString
 public class Course {
     private double credit;
-    private String id;
+    private String courseId;
     private static int nextId = 1;
     private Student[] students;
     private Department department;
