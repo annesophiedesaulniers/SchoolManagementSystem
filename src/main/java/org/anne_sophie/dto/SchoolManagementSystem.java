@@ -46,7 +46,7 @@ public class SchoolManagementSystem {
     public void addDepartment(String departmentName) {
         if (numOfDepartments < 5) {
             departments[numOfDepartments++] = new Department(departmentName);
-            System.out.println("New department added.");
+            System.out.println("Successfully added department Department " + departmentName);
         } else {
             System.out.println("Limit of 5 departments. Unable to add a new department.");
         }
@@ -61,7 +61,7 @@ public class SchoolManagementSystem {
     public void addCourse(String courseId, double credit, String courseName) {
         if (numOfCourses < 30) {
             courses[numOfCourses++] = new Course(courseId, credit, courseName);
-            System.out.println("New course added.");
+            System.out.println("Successfully added course Course " + courseId, courseName, credit);
         } else {
             System.out.println("Limit of 30 courses. Unable to add a new course.");
         }
@@ -96,6 +96,37 @@ public class SchoolManagementSystem {
             System.out.println("Limit of 200 students. Unable to add a new student.");
         }
     }
+
+    public void printDepartment() {
+        System.out.println("Departments: ");
+        for (Department department : departments) {
+            if (department != null) {
+                System.out.println(departmentId, departmentName);
+            }
+        }
+    }
+
+    /**
+     * displays all the teachers
+     */
+    public void printTeachers() {
+
+    }
+
+    /**
+     * displays all the students
+     */
+    public void printStudents() {
+
+    }
+
+    /**
+     * displays all the courses
+     */
+    public void printCourses() {
+
+    }
+
 
     /**
      * searches for a department based on its id
@@ -132,23 +163,6 @@ public class SchoolManagementSystem {
     /**
      * displays all the departments
      */
-    public void printDepartment() {
-
-    }
-
-    /**
-     * displays all the teachers
-     */
-    public void printTeachers() {
-        
-    }
-
-    /**
-     * displays all the students
-     */
-    public void printStudents() {
-
-    }
 
     /**
      * registers a student in a course

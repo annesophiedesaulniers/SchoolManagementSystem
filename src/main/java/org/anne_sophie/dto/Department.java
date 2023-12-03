@@ -7,14 +7,17 @@ import lombok.ToString;
  *
  * @author Anne-Sophie Desaulniers
  */
-@ToString
 public class Department {
     private String departmentId;
     private static int nextId = 1;
     private String departmentName;
     
     public Department(String departmentName) {
-        this.departmentId = departmentName;
+        this.departmentName = departmentName;
         this.departmentId = String.format("D%03d", nextId);
+    }
+    @Override
+    public String toString() {
+        return "Department(id=" + departmentId + ", departmentName='" + departmentName + "')";
     }
 }
