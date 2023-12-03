@@ -149,11 +149,17 @@ public class SchoolManagementSystem {
 
     /**
      * searches for a department based on its id
-     * @param Department the depatment we are looking for
+     * @param departmentId the ID of the department we are looking for
      */
-    public String findDepartment(String Department) {
-        
+    public Department findDepartment(String departmentId) {
+        for (Department department : departments) {
+            if (department != null && department.getDepartmentId().equals(departmentId)) {
+                return department;
+            }
+        }
+        return null;
     }
+
 
     /**
      * searches for a student based on its id
