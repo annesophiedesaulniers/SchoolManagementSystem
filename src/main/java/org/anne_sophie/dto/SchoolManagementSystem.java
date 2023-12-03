@@ -192,7 +192,12 @@ public class SchoolManagementSystem {
      * @param teacherId the ID of the teacher we are looking for
      */
     public Teacher findTeacher(String teacherId) {
-
+        for (Teacher teacher : teachers) {
+            if (teacher != null && teacher.getTeacherId().equals(teacherId)) {
+                return teacher;
+            }
+        }
+        return null;
     }
 
     /**

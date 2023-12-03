@@ -1,5 +1,6 @@
 package org.anne_sophie.dto;
 
+import lombok.Getter;
 import lombok.ToString;
 
 /**
@@ -7,6 +8,7 @@ import lombok.ToString;
  *
  * @author Anne-Sophie Desaulniers
  */
+@Getter
 public class Teacher {
     private String fname;
     private String lname;
