@@ -1,5 +1,6 @@
 package org.anne_sophie.dto;
 
+import lombok.Getter;
 import lombok.ToString;
 
 import java.util.Arrays;
@@ -9,6 +10,8 @@ import java.util.Arrays;
  *
  * @author Anne-Sophie Desaulniers
  */
+
+@Getter
 public class Course {
     private double credit;
     private String courseId;

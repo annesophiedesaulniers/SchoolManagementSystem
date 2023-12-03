@@ -176,17 +176,22 @@ public class SchoolManagementSystem {
 
     /**
      * searches for a course based on its id
-     * @param Course the course we are looking for
+     * @param courseId the ID of the course we are looking for
      */
-    public String findCourse(String Course) {
-
+    public Course findCourse(String courseId) {
+        for (Course course : courses) {
+            if (course != null && course.getCourseId().equals(courseId)) {
+                return course;
+            }
+        }
+        return null;
     }
 
     /**
      * searches for a teacher based on its id
-     * @param Teacher the teacher we are looking for
+     * @param teacherId the ID of the teacher we are looking for
      */
-    public String findTeacher(String Teacher) {
+    public Teacher findTeacher(String teacherId) {
 
     }
 
