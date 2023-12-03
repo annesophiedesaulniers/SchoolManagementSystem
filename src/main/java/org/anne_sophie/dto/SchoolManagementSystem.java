@@ -114,7 +114,12 @@ public class SchoolManagementSystem {
      * displays all the teachers
      */
     public void displayTeachers() {
-
+        System.out.println("Teachers: ");
+        for (Teacher teacher : teachers) {
+            if (teacher != null) {
+                System.out.println(teacher);
+            }
+        }
     }
 
     /**
