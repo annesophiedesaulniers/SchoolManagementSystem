@@ -71,16 +71,17 @@ public class SchoolManagementSystem {
 
     /**
      * adds a new teacher
-     * @param teacherId the id of the new teacher
      * @param fname the first name of the new teacher
      * @param lname the last name of the new teacher
+     * @param department the department of the new teacher
      */
-    public void addTeacher(String teacherId, String fname, String lname) {
+    public void addTeacher(String fname, String lname, Department department) {
         if (numOfTeachers < 20) {
-            teachers[numOfTeachers++] = new Teacher(teacherId, fname, lname);
-            System.out.println("New teacher added.");
+            Teacher newTeacher = new Teacher(fname, lname, department);
+            teachers[numOfTeachers++] = newTeacher;
+            System.out.println("Teacher " + newTeacher + " added successfully.");
         } else {
-            System.out.println("Limit of 20 teachers. Unable to add a new teacher.");
+            System.out.println("Max teacher reached, add a new teacher failed.");
         }
     }
 
