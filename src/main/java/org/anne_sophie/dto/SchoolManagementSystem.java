@@ -45,8 +45,9 @@ public class SchoolManagementSystem {
      */
     public void addDepartment(String departmentName) {
         if (numOfDepartments < 5) {
-            departments[numOfDepartments++] = new Department(departmentName);
-            System.out.println("Successfully added department Department " + departmentName);
+            Department department = new Department(departmentName);
+            departments[numOfDepartments++] = department;
+            System.out.println("Successfully added department " + department);
         } else {
             System.out.println("Limit of 5 departments. Unable to add a new department.");
         }
