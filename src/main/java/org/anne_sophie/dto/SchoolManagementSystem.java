@@ -101,11 +101,11 @@ public class SchoolManagementSystem {
         }
     }
 
-    public void printDepartment() {
+    public void displayDepartments() {
         System.out.println("Departments: ");
         for (Department department : departments) {
             if (department != null) {
-                System.out.println(departmentId, departmentName);
+                System.out.println(department);
             }
         }
     }
@@ -113,21 +113,21 @@ public class SchoolManagementSystem {
     /**
      * displays all the teachers
      */
-    public void printTeachers() {
+    public void displayTeachers() {
 
     }
 
     /**
      * displays all the students
      */
-    public void printStudents() {
+    public void displayStudents() {
 
     }
 
     /**
      * displays all the courses
      */
-    public void printCourses() {
+    public void displayCourses() {
 
     }
 
