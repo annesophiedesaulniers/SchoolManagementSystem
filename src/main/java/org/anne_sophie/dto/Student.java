@@ -17,8 +17,11 @@ public class Student {
     private Department department;
 
     public Student(String fname, String lname, Department department) {
-
+    this.fname = fname;
+    this.lname = lname;
+    this.department = department;
+    this.studentId = String.format("S%03d", nextId);
+        }
     }
 
-}
 

@@ -6,6 +6,7 @@ package org.anne_sophie;
  * @author Anne-Sophie Desaulniers
  */
 public class SchoolManagementSystem {
+
     /**
      * searches for a department based on its id
      * @param Department the depatment we are looking for
