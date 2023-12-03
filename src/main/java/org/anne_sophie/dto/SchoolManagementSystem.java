@@ -138,7 +138,12 @@ public class SchoolManagementSystem {
      * displays all the courses
      */
     public void displayCourses() {
-
+        System.out.println("Courses: ");
+        for (Course course: courses) {
+            if (course != null) {
+                System.out.println(course);
+            }
+        }
     }
 
 
