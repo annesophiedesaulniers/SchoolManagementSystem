@@ -7,7 +7,6 @@ import lombok.ToString;
  *
  * @author Anne-Sophie Desaulniers
  */
-@ToString
 public class Teacher {
     private String fname;
     private String lname;
@@ -20,6 +19,11 @@ public class Teacher {
         this.lname = lname;
         this.department = department;
         this.teacherId = String.format("T%03d", nextId);
+    }
+    @Override
+    public String toString() {
+        return "Teacher{id='" + teacherId + "', fname='" + fname + "', lname='" + lname +
+                "', department='" + department + "'}";
     }
 }
     
