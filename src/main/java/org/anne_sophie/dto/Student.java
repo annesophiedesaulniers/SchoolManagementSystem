@@ -20,7 +20,7 @@ public class Student {
     this.fname = fname;
     this.lname = lname;
     this.department = department;
-    this.studentId = String.format("S%03d", nextId);
+    this.studentId = String.format("S%03d", nextId++);
         }
     }
 

@@ -22,6 +22,6 @@ public class Course {
         this.courseName = courseName;
         this.credit = credit;
         this.department = department;
-        this.courseId = String.format("C%03d", nextId);
+        this.courseId = String.format("C%03d", nextId++);
     }
 }
