@@ -126,7 +126,12 @@ public class SchoolManagementSystem {
      * displays all the students
      */
     public void displayStudents() {
-
+        System.out.println("Students: ");
+        for (Student student : students) {
+            if (student != null) {
+                System.out.println(student);
+            }
+        }
     }
 
     /**
