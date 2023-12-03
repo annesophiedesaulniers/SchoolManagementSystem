@@ -11,7 +11,7 @@ import lombok.ToString;
 public class Student {
     private String fname;
     private String lname;
-    private Course courses;
+    private Course[] courses;
     private String studentId;
     private static int nextId = 1;
     private Department department;
