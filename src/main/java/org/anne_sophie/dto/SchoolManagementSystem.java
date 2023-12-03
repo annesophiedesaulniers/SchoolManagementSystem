@@ -59,7 +59,12 @@ public class SchoolManagementSystem {
      * @param courseName the name of the new course
      */
     public void addCourse(String courseId, double credit, String courseName) {
-
+        if (numOfCourses < 30) {
+            courses[numOfCourses++] = new Course(courseId, credit, courseName);
+            System.out.println("New course added.");
+        } else {
+            System.out.println("Limit of 30 courses. Unable to add a new course.");
+        }
     }
 
     /**
@@ -69,7 +74,12 @@ public class SchoolManagementSystem {
      * @param lname the last name of the new teacher
      */
     public void addTeacher(String teacherId, String fname, String lname) {
-
+        if (numOfTeachers < 20) {
+            teachers[numOfTeachers++] = new Teacher(teacherId, fname, lname);
+            System.out.println("New teacher added.");
+        } else {
+            System.out.println("Limit of 20 teachers. Unable to add a new teacher.");
+        }
     }
 
     /**
@@ -79,7 +89,12 @@ public class SchoolManagementSystem {
      * @param lname the last name of the new student
      */
     public void addStudent(String studentId, String fname, String lname) {
-
+        if (numOfStudents < 200) {
+            students[numOfStudents++] = new Student(studentId, fname, lname);
+            System.out.println("New student added.");
+        } else {
+            System.out.println("Limit of 200 students. Unable to add a new student.");
+        }
     }
 
     /**
