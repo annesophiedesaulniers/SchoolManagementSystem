@@ -1,11 +1,43 @@
 package org.anne_sophie;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.anne_sophie.dto.Course;
+import org.anne_sophie.dto.Department;
+import org.anne_sophie.dto.Student;
+import org.anne_sophie.dto.Teacher;
+
 /**
  * School management system
  * 
  * @author Anne-Sophie Desaulniers
  */
+
+@Getter
+@Setter
+@EqualsAndHashCode
 public class SchoolManagementSystem {
+    private Department[] departments;
+    private Student[] students;
+    private Teacher[] teachers;
+    private Course[] courses;
+    private int numOfDepartments;
+    private int numOfStudents;
+    private int numOfTeachers;
+    private int numOfCourses;
+
+    public SchoolManagementSystem() {
+        this.departments = new Department[5];
+        this.students = new Student[200];
+        this.teachers = new Teacher[20];
+        this.courses = new Course[30];
+        this.numOfDepartments = 0;
+        this.numOfStudents = 0;
+        this.numOfTeachers = 0;
+        this.numOfCourses = 0;
+    }
 
     /**
      * searches for a department based on its id
@@ -70,7 +102,9 @@ public class SchoolManagementSystem {
      * @param studentId the id of the student we want ot register in the course
      */
     public void registerCourse(String courseId, String studentId) {
-        
+        if (numOfCourses < 5) {
+
+        }
     }
 
     /**
