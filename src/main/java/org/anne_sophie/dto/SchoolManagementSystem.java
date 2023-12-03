@@ -163,10 +163,15 @@ public class SchoolManagementSystem {
 
     /**
      * searches for a student based on its id
-     * @param Student the student we are looking for
+     * @param studentId the ID of the student we are looking for
      */
-    public String findStudents(String Student) {
-
+    public Student findStudents(String studentId) {
+        for (Student student : students) {
+            if (student != null && student.getStudentId().equals(studentId)) {
+                return student;
+            }
+        }
+        return null;
     }
 
     /**

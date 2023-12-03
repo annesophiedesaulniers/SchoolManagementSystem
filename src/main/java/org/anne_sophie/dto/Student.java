@@ -1,5 +1,6 @@
 package org.anne_sophie.dto;
 
+import lombok.Getter;
 import lombok.ToString;
 
 import java.util.Arrays;
@@ -9,7 +10,8 @@ import java.util.Arrays;
  *
  * @author Anne-Sophie Desaulniers
  */
-@ToString
+
+@Getter
 public class Student {
     private String fname;
     private String lname;
