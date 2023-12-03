@@ -49,23 +49,24 @@ public class SchoolManagementSystem {
             departments[numOfDepartments++] = department;
             System.out.println("Successfully added department " + department);
         } else {
-            System.out.println("Limit of 5 departments. Unable to add a new department.");
+            System.out.println("Max department reached, add a new department failed");
         }
     }
 
     /**
      * adds a new course
-     * @param courseId the id of the new course
+     * @param courseName the name of the new course
      * @param credit the amount of credits of the new course
      * @param courseName the name of the new course
      */
-    public void addCourse(String courseId, double credit, String courseName) {
+    public void addCourse(String courseName, double credit, Department department) {
         if (numOfCourses < 30) {
-            courses[numOfCourses++] = new Course(courseId, credit, courseName);
-            System.out.println("Successfully added course Course " + courseId, courseName, credit);
+            Course newCourse = new Course(courseName, credit, department);
+            courses[numOfCourses++] = newCourse;
+            System.out.println("Course " + newCourse + " added successfully.");
         } else {
-            System.out.println("Limit of 30 courses. Unable to add a new course.");
-        }
+            System.out.println("Max course reached, add a new course failed.");
+            }
     }
 
     /**
@@ -85,16 +86,17 @@ public class SchoolManagementSystem {
 
     /**
      * adds a new student
-     * @param studentId the id of the new student
      * @param fname the first name of the new student
      * @param lname the last name of the new student
+     * @param department the department of the new student
      */
-    public void addStudent(String studentId, String fname, String lname) {
+    public void addStudent(String fname, String lname, Department department) {
         if (numOfStudents < 200) {
-            students[numOfStudents++] = new Student(studentId, fname, lname);
-            System.out.println("New student added.");
+            Student newStudent = new Student(fname, lname, department);
+            students[numOfStudents++] = newStudent;
+            System.out.println("Student " + newStudent + " added successfully.");
         } else {
-            System.out.println("Limit of 200 students. Unable to add a new student.");
+            System.out.println("Max student reached, add a new student failed.");
         }
     }
 
