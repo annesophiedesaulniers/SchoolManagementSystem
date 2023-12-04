@@ -57,7 +57,7 @@ public class SchoolManagementSystem {
      * adds a new course
      * @param courseName the name of the new course
      * @param credit the amount of credits of the new course
-     * @param courseName the name of the new course
+     * @param department the department of the new course
      */
     public void addCourse(String courseName, double credit, Department department) {
         if (numOfCourses < 30) {
@@ -101,6 +101,9 @@ public class SchoolManagementSystem {
         }
     }
 
+    /**
+     * displays all the departments
+     */
     public void displayDepartments() {
         System.out.println("Departments: ");
         for (Department department : departments) {
@@ -165,7 +168,7 @@ public class SchoolManagementSystem {
      * searches for a student based on its id
      * @param studentId the ID of the student we are looking for
      */
-    public Student findStudents(String studentId) {
+    public Student findStudent(String studentId) {
         for (Student student : students) {
             if (student != null && student.getStudentId().equals(studentId)) {
                 return student;
@@ -199,10 +202,6 @@ public class SchoolManagementSystem {
         }
         return null;
     }
-
-    /**
-     * displays all the departments
-     */
 
     /**
      * registers a student in a course
