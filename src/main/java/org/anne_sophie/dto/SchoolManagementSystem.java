@@ -231,6 +231,33 @@ public class SchoolManagementSystem {
         Teacher newTeacher = null;
         Course targetCourse = null;
 
+        for (Teacher teacher : teachers) {
+            if (teacher != null && teacher.getTeacherId().equals(teacherId)) {
+                newTeacher = teacher;
+                break;
+            }
+        }
+        for (Course course : courses) {
+            if (course != null && course.getCourseId().equals(courseId)) {
+                targetCourse = course;
+                break;
+            }
+        }
+        if (newTeacher != null && targetCourse != null) {
+            targetCourse.setTeacher(newTeacher);
+            System.out.println("Modify the teacher of a course successfully");
+            System.out.println(targetCourse.toString() + " teacher info updated successfully.");
+        } else {
+            if (targetCourse == null) {
+                System.out.println("Modify the teacher of a course failed, courseId not found");
+                System.out.println("Cannot find any course match with courseId " + courseId + ", modify teacher for course " + courseId + " failed.");
+            }
+            if (newTeacher == null) {
+                System.out.println("Modify the teacher of a course failed, teacherId not found");
+                System.out.println("Cannot find any teacher match with teacherId " + teacherId + ", modify teacher for course " + courseId + " failed.");
+            }
+        }
     }
 }
+
 
