@@ -9,12 +9,13 @@ import org.anne_sophie.dto.Department;
 import org.anne_sophie.dto.Student;
 import org.anne_sophie.dto.Teacher;
 
+import java.util.Arrays;
+
 /**
  * School management system
- * 
+ *
  * @author Anne-Sophie Desaulniers
  */
-
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -45,9 +46,9 @@ public class SchoolManagementSystem {
      */
     public void addDepartment(String departmentName) {
         if (numOfDepartments < 5) {
-            Department department = new Department(departmentName);
-            departments[numOfDepartments++] = department;
-            System.out.println("Successfully added department " + department);
+            Department newDepartment = new Department(departmentName);
+            departments[numOfDepartments++] = newDepartment;
+            System.out.println("Department " + newDepartment + " added successfully.");
         } else {
             System.out.println("Max department reached, add a new department failed");
         }
@@ -56,30 +57,36 @@ public class SchoolManagementSystem {
     /**
      * adds a new course
      * @param courseName the name of the new course
-     * @param credit the amount of credits of the new course
-     * @param department the department of the new course
+     * @param credit     the amount of credits of the new course
+     * @param departmentId the ID of department of the new course
      */
-    public void addCourse(String courseName, double credit, Department department) {
+    public void addCourse(String courseName, double credit, String departmentId) {
         if (numOfCourses < 30) {
-            Course newCourse = new Course(courseName, credit, department);
-            courses[numOfCourses++] = newCourse;
-            System.out.println("Course " + newCourse + " added successfully.");
+            Department department = findDepartment(departmentId);
+            if (department != null) {
+                Course newCourse = new Course(courseName, credit, department);
+                courses[numOfCourses++] = newCourse;
+                System.out.println("Course " + newCourse + " added successfully.");
+            } else System.out.println("Department with ID " + departmentId + " not found.");
         } else {
             System.out.println("Max course reached, add a new course failed.");
-            }
+        }
     }
 
     /**
      * adds a new teacher
-     * @param fname the first name of the new teacher
-     * @param lname the last name of the new teacher
-     * @param department the department of the new teacher
+     * @param fname      the first name of the new teacher
+     * @param lname      the last name of the new teacher
+     * @param departmentId the ID of the department of the new teacher
      */
-    public void addTeacher(String fname, String lname, Department department) {
+    public void addTeacher(String fname, String lname, String departmentId) {
         if (numOfTeachers < 20) {
-            Teacher newTeacher = new Teacher(fname, lname, department);
-            teachers[numOfTeachers++] = newTeacher;
-            System.out.println("Teacher " + newTeacher + " added successfully.");
+            Department department = findDepartment(departmentId);
+            if (department != null) {
+                Teacher newTeacher = new Teacher(fname, lname, department);
+                teachers[numOfTeachers++] = newTeacher;
+                System.out.println("Teacher " + newTeacher + " added successfully.");
+            } else System.out.println("Department with ID " + departmentId + " not found.");
         } else {
             System.out.println("Max teacher reached, add a new teacher failed.");
         }
@@ -89,13 +96,16 @@ public class SchoolManagementSystem {
      * adds a new student
      * @param fname the first name of the new student
      * @param lname the last name of the new student
-     * @param department the department of the new student
+     * @param departmentId the ID of the department of the new student
      */
-    public void addStudent(String fname, String lname, Department department) {
+    public void addStudent(String fname, String lname, String departmentId) {
         if (numOfStudents < 200) {
-            Student newStudent = new Student(fname, lname, department);
-            students[numOfStudents++] = newStudent;
-            System.out.println("Student " + newStudent + " added successfully.");
+            Department department = findDepartment(departmentId);
+            if (department!= null) {
+                Student newStudent = new Student(fname, lname, department);
+                students[numOfStudents++] = newStudent;
+                System.out.println("Student " + newStudent + " added successfully.");
+            } else System.out.println("Department with ID " + departmentId + " not found.");
         } else {
             System.out.println("Max student reached, add a new student failed.");
         }
@@ -142,7 +152,7 @@ public class SchoolManagementSystem {
      */
     public void displayCourses() {
         System.out.println("Courses: ");
-        for (Course course: courses) {
+        for (Course course : courses) {
             if (course != null) {
                 System.out.println(course);
             }
@@ -205,22 +215,22 @@ public class SchoolManagementSystem {
 
     /**
      * registers a student in a course
-     * @param courseId the id of the course we want to register a student in
+     * @param courseId  the id of the course we want to register a student in
      * @param studentId the id of the student we want ot register in the course
      */
     public void registerCourse(String courseId, String studentId) {
-        if (numOfCourses < 5) {
 
-        }
     }
 
     /**
      * modifies the teacher of a course
      * @param teacherId the new teacher of the course
-     * @param courseId the course we want the teacher to be modified
+     * @param courseId  the course we want the teacher to be modified
      */
     public void modifyCourseTeacher(String teacherId, String courseId) {
+        Teacher newTeacher = null;
+        Course targetCourse = null;
 
     }
-
 }
+

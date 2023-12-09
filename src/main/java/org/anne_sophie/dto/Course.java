@@ -1,6 +1,7 @@
 package org.anne_sophie.dto;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Arrays;
@@ -12,11 +13,12 @@ import java.util.Arrays;
  */
 
 @Getter
+@Setter
 public class Course {
     private double credit;
     private String courseId;
     private static int nextId = 1;
-    private Student[] students;
+    private Student[] registeredStudents;
     private Department department;
     private int numOfStudents;
     private Teacher teacher;
@@ -28,12 +30,12 @@ public class Course {
         this.department = department;
         this.courseId = String.format("C%03d", nextId++);
         this.numOfStudents = 0;
-        this.students = new Student[5];
+        this.registeredStudents = new Student[5];
     }
     @Override
     public String toString() {
         return "Course{id='" + courseId + "', courseName='" + courseName + "', credit=" + credit +
                 ", teacher=" + teacher + ", department='" + department + "', students=" +
-                Arrays.toString(students) + "}";
+                Arrays.toString(registeredStudents) + "}";
     }
 }
