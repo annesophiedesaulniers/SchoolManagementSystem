@@ -45,7 +45,7 @@ public class SchoolManagementSystem {
      * @param departmentName the id of the new department
      */
     public void addDepartment(String departmentName) {
-        if (numOfDepartments < 5) {
+        if (numOfDepartments <= 5) {
             Department newDepartment = new Department(departmentName);
             departments[numOfDepartments++] = newDepartment;
             System.out.println("Department " + newDepartment + " added successfully.");
@@ -61,7 +61,7 @@ public class SchoolManagementSystem {
      * @param departmentId the ID of department of the new course
      */
     public void addCourse(String courseName, double credit, String departmentId) {
-        if (numOfCourses < 30) {
+        if (numOfCourses <= 30) {
             Department department = findDepartment(departmentId);
             if (department != null) {
                 Course newCourse = new Course(courseName, credit, department);
@@ -80,7 +80,7 @@ public class SchoolManagementSystem {
      * @param departmentId the ID of the department of the new teacher
      */
     public void addTeacher(String fname, String lname, String departmentId) {
-        if (numOfTeachers < 20) {
+        if (numOfTeachers <= 20) {
             Department department = findDepartment(departmentId);
             if (department != null) {
                 Teacher newTeacher = new Teacher(fname, lname, department);
@@ -99,7 +99,7 @@ public class SchoolManagementSystem {
      * @param departmentId the ID of the department of the new student
      */
     public void addStudent(String fname, String lname, String departmentId) {
-        if (numOfStudents < 200) {
+        if (numOfStudents <= 200) {
             Department department = findDepartment(departmentId);
             if (department != null) {
                 Student newStudent = new Student(fname, lname, department);
