@@ -56,8 +56,8 @@ public class SchoolManagementSystem {
 
     /**
      * adds a new course
-     * @param courseName   the name of the new course
-     * @param credit       the amount of credits of the new course
+     * @param courseName the name of the new course
+     * @param credit the amount of credits of the new course
      * @param departmentId the ID of department of the new course
      */
     public void addCourse(String courseName, double credit, String departmentId) {

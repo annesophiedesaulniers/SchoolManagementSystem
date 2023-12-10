@@ -24,6 +24,7 @@ public class Teacher {
         this.department = department;
         this.teacherId = String.format("T%03d", nextId);
     }
+
     @Override
     public String toString() {
         return "Teacher{id='" + teacherId + "', fname='" + fname + "', lname='" + lname +
