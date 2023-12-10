@@ -235,7 +235,6 @@ public class SchoolManagementSystem {
                         }
                         if (course.getRegisteredStudents()[i] == null);
                         course.getRegisteredStudents()[i] = student;
-                        course.setNumOfStudents(course.getNumOfStudents() + 1);
                         break;
                     }
                 }
