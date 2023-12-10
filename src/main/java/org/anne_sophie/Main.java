@@ -1,6 +1,6 @@
 package org.anne_sophie;
 
-import org.anne_sophie.SchoolManagementSystem;
+import org.anne_sophie.dto.SchoolManagementSystem;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,12 +16,12 @@ public class Main {
         //schoolManagementSystem.displayCourses();
         //schoolManagementSystem.displayStudents();
 
-        //schoolManagementSystem.findCourse("C001");
-        //schoolManagementSystem.findTeacher();
-        //schoolManagementSystem.findStudent();
-        schoolManagementSystem.findDepartment("D001");
+        //System.out.println(schoolManagementSystem.findCourse("C001"));
+        //System.out.println(schoolManagementSystem.findTeacher("T001"));
+        //System.out.println(schoolManagementSystem.findStudent("S001"));
+        //System.out.println(schoolManagementSystem.findDepartment("D001"));
 
         schoolManagementSystem.modifyCourseTeacher("T001", "C001");
-        //schoolManagementSystem.registerCourse();
+        schoolManagementSystem.registerCourse("C001", "S001");
     }
 }

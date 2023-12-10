@@ -1,4 +1,4 @@
-package org.anne_sophie;
+package org.anne_sophie.dto;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -56,8 +56,8 @@ public class SchoolManagementSystem {
 
     /**
      * adds a new course
-     * @param courseName the name of the new course
-     * @param credit     the amount of credits of the new course
+     * @param courseName   the name of the new course
+     * @param credit       the amount of credits of the new course
      * @param departmentId the ID of department of the new course
      */
     public void addCourse(String courseName, double credit, String departmentId) {
@@ -75,8 +75,8 @@ public class SchoolManagementSystem {
 
     /**
      * adds a new teacher
-     * @param fname      the first name of the new teacher
-     * @param lname      the last name of the new teacher
+     * @param fname the first name of the new teacher
+     * @param lname the last name of the new teacher
      * @param departmentId the ID of the department of the new teacher
      */
     public void addTeacher(String fname, String lname, String departmentId) {
@@ -101,7 +101,7 @@ public class SchoolManagementSystem {
     public void addStudent(String fname, String lname, String departmentId) {
         if (numOfStudents < 200) {
             Department department = findDepartment(departmentId);
-            if (department!= null) {
+            if (department != null) {
                 Student newStudent = new Student(fname, lname, department);
                 students[numOfStudents++] = newStudent;
                 System.out.println("Student " + newStudent + " added successfully.");
@@ -159,7 +159,6 @@ public class SchoolManagementSystem {
         }
     }
 
-
     /**
      * searches for a department based on its id
      * @param departmentId the ID of the department we are looking for
@@ -172,7 +171,6 @@ public class SchoolManagementSystem {
         }
         return null;
     }
-
 
     /**
      * searches for a student based on its id
@@ -219,7 +217,42 @@ public class SchoolManagementSystem {
      * @param studentId the id of the student we want ot register in the course
      */
     public void registerCourse(String courseId, String studentId) {
-
+        if (findCourse(courseId) != null) {
+            Course course = findCourse(courseId);
+            if (findStudent(studentId) != null) {
+                Student student = findStudent(studentId);
+                if (student.getNumOfCourses() >= Student.MAX_COURSE_NUM) {
+                    System.out.println("Course " + courseId + " has been fully registered, register course " + courseId
+                            + " " + "for student " + studentId + " failed");
+                } else if (course.getNumOfStudents() >= Student.MAX_COURSE_NUM) {
+                    System.out.println("Student " + studentId + " has  already registered in 5 courses, register course " +
+                            "for student " + studentId + " failed");
+                } else {
+                    for (int i = 0; i < course.getRegisteredStudents().length; i++) {
+                        if (student.getRegisteredCourses()[i] != null && student.getRegisteredCourses()[i].equals(course)) {
+                            System.out.println("Student " + studentId + " has already registered Course " + courseId +
+                                    " , register course " + courseId + " for student " + studentId + " failed");
+                        }
+                        if (course.getRegisteredStudents()[i] == null);
+                        course.getRegisteredStudents()[i] = student;
+                        course.setNumOfStudents(course.getNumOfStudents() + 1);
+                        break;
+                    }
+                }
+                for (int i = 0; i < student.getRegisteredCourses().length; i++) {
+                    if (student.getRegisteredCourses()[i] == null) {
+                        student.getRegisteredCourses()[i] = course;
+                        student.setNumOfCourses(student.getNumOfCourses() + 1);
+                        System.out.println("Student register course successfully");
+                        System.out.println("Latest student info: " + student);
+                        System.out.println("Latest course info: " + course);
+                        break;
+                    }
+                }
+            } else System.out.println("Cannot find any student match with studentId " + studentId + " ,register course " +
+                    "for student " + studentId + " failed");
+        } else System.out.println("Cannot find any course match with courseId " + courseId + " ,register course " +
+                "for student " + studentId + " failed");
     }
 
     /**
@@ -259,5 +292,3 @@ public class SchoolManagementSystem {
         }
     }
 }
-
-

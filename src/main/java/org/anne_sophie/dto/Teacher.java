@@ -30,5 +30,3 @@ public class Teacher {
                 "', department='" + department + "'}";
     }
 }
-    
-

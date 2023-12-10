@@ -23,7 +23,7 @@ public class Course {
     private int numOfStudents;
     private Teacher teacher;
     private String courseName;
-    
+
     public Course(String courseName, double credit, Department department) {
         this.courseName = courseName;
         this.credit = credit;
@@ -32,10 +32,22 @@ public class Course {
         this.numOfStudents = 0;
         this.registeredStudents = new Student[5];
     }
+
+    /**
+     * adds the student to the course's students array
+     * @return the updated info of the course
+     */
     @Override
     public String toString() {
-        return "Course{id='" + courseId + "', courseName='" + courseName + "', credit=" + credit +
-                ", teacher=" + teacher + ", department='" + department + "', students=" +
-                Arrays.toString(registeredStudents) + "}";
+        String studentArray = "[";
+        for (int i = 0; i < registeredStudents.length; i++) {
+            if (registeredStudents[i] != null) {
+                studentArray += registeredStudents[i].fullName() + ", ";
+            }
+        }
+        studentArray += "]";
+        return "Course{id=" + courseId + ", courseName=" + courseName + ", credit=" + credit + ", teacher=" + teacher + ", department=" +
+                "Department(id=" + department.getDepartmentId() + ", departmentName=" + department.getDepartmentName()
+                +  ", students=" + studentArray + "}";
     }
 }
